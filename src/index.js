@@ -3,6 +3,6 @@
 
 module.exports = requestMultipleUrls;
 function requestMultipleUrls(urls) {
-    return 'Test Result';
+    return 'Test Result'
 }
 
