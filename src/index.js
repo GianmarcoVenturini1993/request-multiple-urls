@@ -13,11 +13,17 @@ class Service {
 }
 
 module.exports = requestMultipleUrls;
-async function requestMultipleUrls(url) {
+async function requestMultipleUrls(urls) {
     try {
         let service = new Service();
-        let result = await service.getData(url)
-        return result;
+
+        const promises = urls.map(async url => {
+            const singleResult = await service.getData(url)
+            return singleResult
+        });
+
+        const results = await Promise.all(promises)
+        return results;
     } catch (error) {
         console.log(error);
     }
