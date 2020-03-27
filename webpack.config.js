@@ -8,7 +8,7 @@ module.exports = {
     devtool: 'source-map',
     output: {
         library: 'request-multiple-urls',
-        libraryTarget: 'var',
+        libraryTarget: 'umd',
         path: __dirname,
         filename: 'build/request-multiple-urls.js' // check for prod env later
     },
