@@ -1,7 +1,9 @@
 Request Multiple Urls
 =========
 
-A library that download (json) data from multiple urls and output it.
+A library that downloads (json) data from multiple urls and outputs it.
+
+You can find the npm package [here](https://www.npmjs.com/package/@gianmarcov/request-multiple-urls)
 
 ## Installation
 
@@ -28,6 +30,11 @@ A library that download (json) data from multiple urls and output it.
 ## Tests
 
   `npm test`
+
+## Notes
+
+   The library was built using NodeJS and [Axios](https://github.com/axios/axios), as a client for the HTTP GET requests towards given urls. By default, the response provided reads JSON files and contents. Although the library can read any kind of downladable content, further development is needed to optimize response outputting (e.g. base64 binary conversion for images and so on). As is, the library is only able to proxy GET requests and retrieve data.
+
 
 ## Contributing
 
