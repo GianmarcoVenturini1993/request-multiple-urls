@@ -8,8 +8,17 @@ class Service {
             let response = await axios.get(url);
             return response.data;
         } catch (error) {
-            console.log(error);
+            if (error.response) {
+                return buildError(error.response);
+            } else {
+                return error.message;
+            }
         }
+    }
+
+    buildError (error) {
+        return 'An error occurred.\n Status code: ' + error.status + '\n' 
+            + 'Message: ' + error.data + '\n';
     }
 }
 

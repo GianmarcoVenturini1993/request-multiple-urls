@@ -23,11 +23,10 @@ const jsonData3 = {
 }
 
 describe('index.js tests', () => {
-    it('should returned data from mocked external service', async () => {
+    it('should return data from mocked external service', async () => {
         mock.onGet(urls[0]).reply(200, jsonData1);
         mock.onGet(urls[1]).reply(200, jsonData2);
         mock.onGet(urls[2]).reply(200, jsonData3);
-
 
         var result = requestMultipleUrls(urls);
 
@@ -40,5 +39,23 @@ describe('index.js tests', () => {
             assert.fail(error);
             done();
         })
+    });
+
+    it('should return error response with 408 status if axios response is timed out', async () => {
+        mock.onGet(urls[0]).reply(200, jsonData1);
+        mock.onGet(urls[1]).reply(200, jsonData2);
+        mock.onGet(urls[2]).timeout();
+
+        var result = requestMultipleUrls(urls);
+
+        result.then((data) => {
+            assert.equal(data[0].someData, 'dummy1');
+            assert.equal(data[1].someData, 'dummy2');
+            assert.include(data[2], 'An error occurred.\n Status code: 408\n', 'response contains status 408');
+            done();
+        }, (error) => {
+            assert.fail(error);
+            done();
+        });
     });
 });

@@ -23,13 +23,13 @@
     "@babel/preset-env": "^7.9.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.1.0",
+    "babel-cli": "^6.26.0",
     "mocha": "^7.1.1",
     "webpack": "^4.42.1",
     "webpack-dev-server": "^3.10.3",
     "axios-mock-adapter": "^1.18.1"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "babel-cli": "^6.26.0"
+    "axios": "^0.19.2"
   }
 }
