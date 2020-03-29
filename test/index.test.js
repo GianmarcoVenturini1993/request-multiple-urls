@@ -1,3 +1,5 @@
+'use strict';
+
 const axios = require('axios');
 var MockAdapter = require("axios-mock-adapter");
 var mock = new MockAdapter(axios);

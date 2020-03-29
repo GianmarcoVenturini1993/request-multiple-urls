@@ -1,6 +1,6 @@
 {
   "name": "request-multiple-urls",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "fetch array of urls with json data and return contents",
   "main": "src/index.js",
   "scripts": {
