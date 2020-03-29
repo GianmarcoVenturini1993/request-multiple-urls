@@ -5,7 +5,7 @@ const axios = require('axios');
 class Service {
     async getData (url) {
         try {
-            let response = await axios.get(url);
+            let response = await axios.get(url, { headers: { 'Content-Type': 'application/json' } });
             return response.data;
         } catch (error) {
             if (error.response) {
